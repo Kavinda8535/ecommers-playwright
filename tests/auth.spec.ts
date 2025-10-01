@@ -13,5 +13,5 @@ test('invalid login', async ({ page }) => {
   await loginPage.goto();
   await loginPage.login('wrong_user', 'wrong_pass');
   //await expect(page.locator('[data-test="error"]')).toContainText('Username and password do not match');Epic sadface: Username and password do not match any user in this service
-  await expect(loginPage.getErrorMessage()).toContain('Epic sadface: Username and password do not match any user in this service');
+  await expect(page.locator('[data-test="error"]')).toContainText('Epic sadface: Username and password do not match any user in this service');
 });
