@@ -1,0 +1,16 @@
+{
+  "name": "saucedemo-playwright",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test --reporter=line",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "codegen": "playwright codegen https://www.saucedemo.com/"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^24.6.1",
+    "dotenv": "^16.0.3",
+    "typescript": "^5.0.0"
+  }
+}
