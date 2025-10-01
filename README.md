@@ -1,4 +1,4 @@
-# Saucedemo Playwright Regression Suite
+# Playwright Regression Suite
 
 This project is a **Playwright regression test suite** for [SauceDemo](https://www.saucedemo.com/) built with **TypeScript**, following **best practices**.
 
