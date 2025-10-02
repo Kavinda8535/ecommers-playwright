@@ -8,12 +8,18 @@ export class LoginPage {
   }
 
   async login(username: string, password: string) {
-    //await this.page.fill('#user-name', username);
-    await this.page.fill('[data-test="username"]', 'username'); // Best practice to use data-test attributes
-    //await this.page.fill('#password', password);
-    await this.page.fill('[data-test="password"]', 'password');
-    //await this.page.click('#login-button');
+    // //await this.page.fill('#user-name', username);
+    // await this.page.fill('[data-test="username"]', 'username'); // Best practice to use data-test attributes
+    // //await this.page.fill('#password', password);
+    // await this.page.fill('[data-test="password"]', 'password');
+    // //await this.page.click('#login-button');
+    // await this.page.click('[data-test="login-button"]');
+
+    ///**** */
+    await this.page.fill('[data-test="username"]', username);
+    await this.page.fill('[data-test="password"]', password);
     await this.page.click('[data-test="login-button"]');
+    await this.page.waitForLoadState('networkidle');
   }
 
   async getErrorMessage() {

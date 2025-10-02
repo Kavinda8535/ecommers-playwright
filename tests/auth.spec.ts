@@ -1,15 +1,20 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/login.page';
 
-const username = process.env.SAUCE_USERNAME || '';
-const password = process.env.SAUCE_PASSWORD || '';
+const username = process.env.SITE_USERNAME || '';
+const password = process.env.SITE_USERNAME || '';
 
 test('valid login', async ({ page }) => {
   const loginPage = new LoginPage(page);
   await loginPage.goto();
-  await loginPage.login(username, password);
-  //await expect(page.locator('.inventory_list')).toBeVisible();
-  await expect(page).toHaveURL(/inventory.html/);
+  //await loginPage.login(username, password);
+  await loginPage.login(process.env.SITE_USERNAME!, process.env.SITE_PASSWORD!); // Local Run...
+  console.log('Username:', process.env.SITE_USERNAME!);
+  console.log('Password:', process.env.SITE_PASSWORD!);
+  await expect(page.locator('.inventory_list')).toBeVisible();
+  await expect(page).toHaveURL(/inventory.html/); //Swag Labs
+  //await expect(page.locator('.app_logo')).toContainText('Swag Labs');
+  await expect(page.locator('.app_logo')).toBeVisible();
 });
 
 test('invalid login', async ({ page }) => {

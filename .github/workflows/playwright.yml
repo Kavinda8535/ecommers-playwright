@@ -28,8 +28,8 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
         env:
-            SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
-            SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
+            SITE_USERNAME: ${{ secrets.SITE_USERNAME }}
+            SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}
 
       - name: Upload Playwright Test Report
         if: always()
