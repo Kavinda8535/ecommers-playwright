@@ -1,10 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/login.page';
 
+const username = process.env.SAUCE_USERNAME || '';
+const password = process.env.SAUCE_PASSWORD || '';
+
 test('valid login', async ({ page }) => {
   const loginPage = new LoginPage(page);
   await loginPage.goto();
-  await loginPage.login(process.env.USERNAME!, process.env.PASSWORD!);
+  await loginPage.login(username, password);
   await expect(page.locator('.inventory_list')).toBeVisible();
 });
 
