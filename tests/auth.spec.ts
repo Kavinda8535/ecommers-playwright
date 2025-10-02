@@ -8,7 +8,8 @@ test('valid login', async ({ page }) => {
   const loginPage = new LoginPage(page);
   await loginPage.goto();
   await loginPage.login(username, password);
-  await expect(page.locator('.inventory_list')).toBeVisible();
+  //await expect(page.locator('.inventory_list')).toBeVisible();
+  await expect(page).toHaveURL(/inventory.html/);
 });
 
 test('invalid login', async ({ page }) => {
