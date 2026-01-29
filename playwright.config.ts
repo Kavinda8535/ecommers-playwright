@@ -9,8 +9,8 @@ export default defineConfig({
   retries: 1,
   reporter: [['html'], ['line']],
   use: {
-    baseURL: process.env.BASE_URL,
-    //baseURL: 'https://www.saucedemo.com/',
+    //baseURL: process.env.BASE_URL,
+    baseURL: 'https://www.saucedemo.com/',
     headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
