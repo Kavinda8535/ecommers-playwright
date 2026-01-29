@@ -16,6 +16,12 @@ export class LoginPage {
     // await this.page.click('[data-test="login-button"]');
 
     ///**** */
+    // - `USERNAME = standard_user`
+    // - `PASSWORD = secret_sauce`
+
+    console.log('Username 4 login call:', username);
+    console.log('Password 4 login call::', password);
+
     await this.page.fill('[data-test="username"]', username);
     await this.page.fill('[data-test="password"]', password);
     await this.page.click('[data-test="login-button"]');

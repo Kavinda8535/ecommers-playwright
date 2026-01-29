@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/auth.fixture';
 import { CartPage } from '../pages/cart.page';
 import { CheckoutPage } from '../pages/checkout.page';
 
-test('successful checkout', async ({ loggedIn, page }) => {
+test('@regression successful checkout', async ({ loggedIn, page }) => {
   await loggedIn.addProductToCart('Sauce Labs Bolt T-Shirt');
   await loggedIn.openCart();
 
