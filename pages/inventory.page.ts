@@ -8,7 +8,17 @@ export class InventoryPage {
   }
 
   async addProductToCart(productName: string) {
-    await this.page.click(`text=${productName} >> xpath=.. >> button`);
+
+    const productId = productName
+    .toLowerCase()
+    .replace(/\s+/g, '-');
+
+    console.log
+
+    await this.page.locator(`#add-to-cart-${productId}`).click();
+
+    //await this.page.click(`text=${productName} >> xpath=.. >> button`); This is anti pattern. Why? Use Id is the best practice.
+    //add-to-cart-sauce-labs-backpack=id
   }
 
   async openCart() {
